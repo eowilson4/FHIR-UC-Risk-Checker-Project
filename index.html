@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Example SMART App</title>
+        <title>Ulcerative Colitis Risk Assessment (FHIR Demo) </title>
         <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
         <style>
             #patient, #meds {
@@ -19,11 +19,16 @@
    
     </head>
     <body>
-        <h4>Current Patient</h4>
+        <h2>Patient Profile</h2>
+<p>This information is fetched from a FHIR-enabled EHR. Make sure it's correct before proceeding with the risk assessment.</p>
         <div id="patient">Loading...</div>
         <br/>
-        <h4>Medications</h4>
+       <h2>Current Medications</h2>
+<p>These are medications currently listed in the patient’s EHR record.</p>
         <div id="meds">Loading...</div>
+      <br/>
+<h2>Ulcerative Colitis Risk Results</h2>
+<p id="riskOutput">Complete the form or fetch data to assess risk.</p>
         <script type="text/javascript">
             FHIR.oauth2.ready().then(function(client) {
                 
